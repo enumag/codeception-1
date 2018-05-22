@@ -70,10 +70,7 @@ class Response implements IResponse
         $this->setHeader('Location', $url);
     }
 
-    /**
-     * @param string|int|DateTime $time
-     */
-    public function setExpiration($time): self
+    public function setExpiration(?string $time): self
     {
         if (!$time) {
             $this->setHeader('Cache-Control', 's-maxage=0, max-age=0, must-revalidate');
